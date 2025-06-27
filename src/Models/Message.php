@@ -9,10 +9,12 @@ use Musonza\Chat\ConfigurationManager;
 use Musonza\Chat\Eventing\AllParticipantsDeletedMessage;
 use Musonza\Chat\Eventing\EventGenerator;
 use Musonza\Chat\Eventing\MessageWasSent;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Message extends BaseModel
+class Message extends BaseModel implements HasMedia
 {
-    use EventGenerator;
+    use EventGenerator, InteractsWithMedia;
 
     protected $fillable = [
         'body',

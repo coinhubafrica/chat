@@ -19,6 +19,7 @@ class CreateChatTables extends Migration
             $table->boolean('private')->default(true);
             $table->boolean('direct_message')->default(false);
             $table->text('data')->nullable();
+            $table->timestamp('last_message_at')->nullable();
             $table->timestamps();
         });
 
@@ -45,6 +46,7 @@ class CreateChatTables extends Migration
             $table->bigInteger('participation_id')->unsigned()->nullable();
             $table->string('type')->default('text');
             $table->text('data')->nullable();
+            $table->timestamp('messaged_at')->nullable();
             $table->timestamps();
 
             $table->foreign('participation_id')

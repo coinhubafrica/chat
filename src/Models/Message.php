@@ -21,6 +21,7 @@ class Message extends BaseModel implements HasMedia
         'participation_id',
         'type',
         'data',
+        'messaged_at',
     ];
 
     protected $table = ConfigurationManager::MESSAGES_TABLE;
@@ -39,6 +40,7 @@ class Message extends BaseModel implements HasMedia
     protected $casts = [
         'flagged' => 'boolean',
         'data'    => 'array',
+        'messaged_at' => 'datetime',
     ];
 
     protected $appends = ['sender'];

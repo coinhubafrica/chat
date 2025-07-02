@@ -21,11 +21,12 @@ use Musonza\Chat\Exceptions\InvalidDirectMessageNumberOfParticipants;
 class Conversation extends BaseModel
 {
     protected $table = ConfigurationManager::CONVERSATIONS_TABLE;
-    protected $fillable = ['data', 'direct_message'];
+    protected $fillable = ['data', 'direct_message', 'last_message_at'];
     protected $casts = [
         'data'           => 'array',
         'direct_message' => 'boolean',
         'private'        => 'boolean',
+        'last_message_at' => 'datetime',
     ];
 
     public function delete()
